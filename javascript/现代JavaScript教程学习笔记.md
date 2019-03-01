@@ -47,3 +47,6 @@ let message = (age < 3) ? 'Hi, baby!' :
 alert( message );
 
 ```
+
+
+我们的眼睛垂直扫描代码。跨越多行的结构比长的水平代码更容易理解。
