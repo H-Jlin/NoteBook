@@ -29,3 +29,20 @@ prompt
 显示信息要求用户输入文本。点击确定返回文本，或者点击取消或按下 Esc 键，对于所有浏览器来说，其返回值都是。
 confirm
 显示信息等待用户点击确定或取消。点击确定返回 true，点击取消或 Esc 键返回 false。
+
+多个 ‘?’
+使用一系列问号 ? 运算符可以返回一个取决于多个条件的值。
+
+如下所示：
+
+ ```
+let age = prompt('age?', 18);
+
+let message = (age < 3) ? 'Hi, baby!' :
+  (age < 18) ? 'Hello!' :
+  (age < 100) ? 'Greetings!' :
+  'What an unusual age!';
+
+alert( message );
+
+```
