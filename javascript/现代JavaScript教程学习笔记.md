@@ -75,3 +75,11 @@ let sayHi = function() {
 
 在代码块的结尾是不需要 ;，像 if { ... }，for { }，function f { } 等语法结构后面都不用加。
 函数表达式通常这样声明： let sayHi = ...;，作为一个变量。 而不是代码块。不管什么值，建议在语句结尾处建议使用分号 ;。所以这里的分号与函数表达式本身没有任何关系，它只是终止了语句。
+
+
+A function is a value representing an “action”
+字符串或数字等常规值视为 data。
+
+函数可以视为一个 action。
+
+我们可以在变量之间传递他们，并在需要时运行。
