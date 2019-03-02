@@ -83,3 +83,27 @@ A function is a value representing an “action”
 函数可以视为一个 action。
 
 我们可以在变量之间传递他们，并在需要时运行。
+
+
+
+糟糕的注释
+新手倾向于使用注释来解释“代码中发生了什么”。
+### Ordered like an object
+Are objects ordered? In other words, if we loop over an object, do we get all properties in the same order they were added? Can we rely on this?
+
+The short answer is: “ordered in a special fashion”: integer properties are sorted, others appear in creation order. The details follow.
+
+As an example, let’s consider an object with the phone codes:
+```js
+let codes = {
+  "49": "Germany",
+  "41": "Switzerland",
+  "44": "Great Britain",
+  // ..,
+  "1": "USA"
+};
+
+for(let code in codes) {
+  alert(code); // 1, 41, 44, 49
+}
+```
