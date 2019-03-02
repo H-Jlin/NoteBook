@@ -129,3 +129,65 @@ for(let code in codes) {
 根据规范，对象的属性键只能是 String 类型或者 Symbol 类型。不是 Number，也不是 Boolean，只有 String 或 Symbol 这两种类型。
 
 在 JavaScript 中，this 是『自由』的，它的值是在调用时进行求值的，它的值并不取决于方法声明的位置，而是（取决）于在『点之前』的是什么对象。
+
+
+有一个可以上下移动的 ladder 对象：
+```js
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+  },
+  down() {
+    this.step--;
+  },
+  showStep: function() { // shows the current step
+    alert( this.step );
+  }
+};
+```
+现在如果我们要依次执行几次调用，可以这样做：
+```js
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); // 1
+```
+修改 up 和 down 的代码让调用可以链接，就像这样：
+
+```ladder.up().up().down().showStep(); // 1```
+此种方法在 JavaScript 库中被广泛使用。
+
+打开带有测试的沙箱。
+
+解决方案
+解决方案就是在每次调用后返回这个对象本身。
+
+```js
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+}
+
+ladder.up().up().down().up().down().showStep(); // 1
+```
+我们也可以每行一个调用。对于长链接它更具可读性：
+```js
+ladder
+  .up()
+  .up()
+  .down()
+  .up()
+  .down()
+  .showStep(); // 1
