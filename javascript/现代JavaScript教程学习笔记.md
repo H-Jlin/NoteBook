@@ -205,8 +205,8 @@ ladder
 在一个函数内部，我们可以使用 new.target 属性来检查它是用 new 还是不用它来调用。
 
 常规调用为空，如果通过 new 调用，则等于函数：
-
- function User() {
+```js
+function User() {
   alert(new.target);
 }
 
@@ -215,8 +215,11 @@ User(); // undefined
 
 // 带 new：
 new User(); // function User { ... }
+```
+
 这可以使 new 和常规语法的工作原理相同：
 
+```js
  function User(name) {
   if (!new.target) { // 如果你没有运行 new
     return new User(name); // ...会为你添加 new
@@ -227,4 +230,5 @@ new User(); // function User { ... }
 
 let john = User("John"); // 重新调用 new User
 alert(john.name); // John
+```
 这种方法有时用在库中以使语法更加灵活。但因为省略 new 使得它不易阅读，这可不是一件好事。 而通过 new 我们可以都知道这个新对象正在创建。
