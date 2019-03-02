@@ -85,9 +85,27 @@ A function is a value representing an “action”
 我们可以在变量之间传递他们，并在需要时运行。
 
 
-
-糟糕的注释
+### 糟糕的注释
 新手倾向于使用注释来解释“代码中发生了什么”。
+在良好的代码中，这种“解释性”评论的数量应该是最小的。严肃的说，就算没有它们，代码也应该很容易理解。
+关于这一点有一个很棒的原则：“如果代码不够清晰以至于需要一个注释，那么或许它应该被重写。”
+
+
+一个好的开发者的标志之一就是他的注释：它们的存在甚至它们的缺席。
+好的注释可以使我们更好的维护代码，并且在很长时间之后依然可以更高效地回到代码中和使用其功能。
+
+### 注释这些内容
+
+整体架构，高层次的观点。
+函数的用法。
+重要的解决方案，特别是在不是很明显时。
+
+### 避免注释
+
+阐述“代码如何工作”或“它做了什么”。
+只有在没有这些就不可能使代码变得如此简单和自我描述的情况下才可以使用它们。
+
+
 ### Ordered like an object
 Are objects ordered? In other words, if we loop over an object, do we get all properties in the same order they were added? Can we rely on this?
 
