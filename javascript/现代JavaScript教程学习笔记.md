@@ -127,3 +127,5 @@ for(let code in codes) {
 ```
 
 根据规范，对象的属性键只能是 String 类型或者 Symbol 类型。不是 Number，也不是 Boolean，只有 String 或 Symbol 这两种类型。
+
+在 JavaScript 中，this 是『自由』的，它的值是在调用时进行求值的，它的值并不取决于方法声明的位置，而是（取决）于在『点之前』的是什么对象。
