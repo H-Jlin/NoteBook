@@ -125,3 +125,5 @@ for(let code in codes) {
   alert(code); // 1, 41, 44, 49
 }
 ```
+
+根据规范，对象的属性键只能是 String 类型或者 Symbol 类型。不是 Number，也不是 Boolean，只有 String 或 Symbol 这两种类型。
